@@ -1,0 +1,9 @@
+name: Blog.Greg.Lu
+url: http://blog.greg.lu
+description:
+
+permalink: /:year/:month/:day/:title/
+paginate: 10
+pygments: true
+
+exclude: ['README.md', 'Gemfile.lock', 'Gemfile', 'Rakefile']
