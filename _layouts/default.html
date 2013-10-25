@@ -12,53 +12,44 @@
 
   <link href="/assets/css/style.css" rel="stylesheet" />
   <link href="/assets/css/colors-dark.css" rel="stylesheet" />
-
+  <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.0/css/font-awesome.css" rel="stylesheet">
+  <link rel="icon" type="image/png" href="/images/favicon.png">
 </head>
 
 <body>
-
-
 
   <header id="header">
     <h1><a href="/">{{ site.name }}</a></h1>
     <p>{{ site.description }}</p>
   </header>
 
-
-
   <div id="page">
-
-
 
     <div id="sidebar">
       <nav>
         <ul>
           <li><a href="/">Home</a></li>
           <li><a href="/archives">Archive</a></li>
-          <li><a href="/about">About</a></li>
           <li><a href="/feed.xml">RSS Feed</a></li>
+        </ul>
+        <ul>
+          <li><h2 class="about-heading">Greg Lu</h2></li>
+          <li><a href="https://github.com/greglu">Github <i class="fa fa-github-square fa-lg"></i></a></li>
+          <li><a href="https://www.linkedin.com/in/greglu">LinkedIn <i class="fa fa-linkedin-square fa-lg"></i></a></li>
         </ul>
       </nav>
     </div>
-
-
 
     <div id="content">
       {{ content }}
     </div>
 
-
-
   </div>
-
-
 
   <footer id="footer">
     <p class="copyright">Copyright &copy; {{ site.time | date: '%Y' }} {{ site.name }}. Powered by <a href="http://jekyllrb.com">Jekyll</a>, theme by <a href="http://www.webmaster-source.com">Matt Harzewski</a></p>
     <p class="license">This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/3.0/deed.en_US">Creative Commons Attribution 3.0 Unported License</a>.</p>
   </footer>
-
-
 
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
   <script src="/assets/js/jquery.mobilemenu.min.js"></script>
@@ -66,6 +57,10 @@
   <script>
     $(document).ready(function(){
       $('#sidebar nav ul').mobileMenu({'topOptionText': 'Menu', 'prependTo': '#sidebar nav'});
+
+      $('img').click(function(ev) {
+        $(this).toggleClass('actual-size');
+      });
     });
   </script>
 

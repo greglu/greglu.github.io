@@ -143,6 +143,12 @@ h3 {
 	margin: 0 auto;
 }
 
+#content img {
+  max-width: 500px;
+  height: auto;
+  cursor: pointer;
+}
+
 #sidebar {
 	position: absolute;
 	text-align: right;
@@ -161,6 +167,13 @@ h3 {
 	font-family: "Helvetica Neue", "Helvetica", serif;
 	font-size: 1.2em;
 	padding: 2px 4px;
+}
+
+#sidebar h2.about-heading {
+  font-family: "Helvetica Neue", "Helvetica", serif;
+  font-size: 1.4em;
+  margin: 0;
+  /*padding: 2px 4px;*/
 }
 
 
@@ -278,9 +291,13 @@ img.center {
   text-transform: none;
   line-height: 1.7;
 }
- 
+
 .icon-sun:before { content: '\e801'; }
 .icon-anchor:before { content: '\e800'; }
 .icon-anchor {
 	font-size: 65%;
+}
+
+#content img.actual-size {
+  max-width: none;
 }
