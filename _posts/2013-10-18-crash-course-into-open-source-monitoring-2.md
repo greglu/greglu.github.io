@@ -7,7 +7,7 @@ categories: monitoring open-source metrics
 
 # Metrics
 
-Metrics are the foundations of monitoring. In order to determine whether something is working, you need to be able to measure it, and often correlate it with other data. Beyond that, historical metrics are also a great source of information for predicting potential problems (via trending), anticipating scaling needs, and optimizing performance. Metric systems consist of two parts: `storage and visualization` and `collection`.
+Metrics are the foundations of monitoring. In order to determine whether something is working, you need to be able to measure it, and often correlate it with other data. Beyond that, historical metrics are also a great source of information for predicting potential problems (via trending), anticipating scaling needs, and optimizing performance. Metric systems consist of two parts: `storage/visualization` and `collection`.
 
 ## List of Open Source Tools
 
@@ -21,18 +21,18 @@ Metrics are the foundations of monitoring. In order to determine whether somethi
 
 ## Storage and Visualization
 
-If you're going to collect metrics, you need a central system to store and visualize them. Often you'll also need to apply mathematical functions (remember derivatives in calculus?) of these numbers, so finding the right tool for your needs is important. Two popular systems for this are `Graphite` and `OpenTSDB`. At a high level, they accomplish similar goals, but their implementations differ quite a bit.
+If you're going to collect metrics, you need a central system to store and visualize them. Often you'll also need to apply mathematical functions (remember derivatives in calculus?) to these numbers, so finding the right tool for your needs is important. Two popular systems for this are `Graphite` and `OpenTSDB`. At a high level, they accomplish similar goals, but their implementations differ quite a bit.
 
-Graphite is a self-contained software system that consists of a front-end, a custom backend storage application called Carbon, and a fixed-sized database called Whisper (similar to RRD). It has a simple protocol for ingesting metric data, and there are [many systems](http://graphite.readthedocs.org/en/latest/tools.html) that already do this. Furthermore, it has a very nice [URL API](http://graphite.readthedocs.org/en/1.0/url-api.html) for retrieving data from the system, which can be used to integrate with other tools. Since it uses a fixed-sized database, it applies retention specifications or downsamples older metric data according to your [configurations](http://graphite.readthedocs.org/en/latest/config-carbon.html#storage-schemas-conf). This typically means that you'll have fine resolution metric data immediately which gets more coarse over time.
+[Graphite](http://graphite.wikidot.com/) is a self-contained software system that consists of a front-end, a custom backend storage application called Carbon, and a fixed-sized database called Whisper (similar to RRD). It has a simple protocol for ingesting metric data, and there are [many systems](http://graphite.readthedocs.org/en/latest/tools.html) that already do this. Furthermore, it has a very nice [URL API](http://graphite.readthedocs.org/en/1.0/url-api.html) for retrieving data from the system, which can be used to integrate with other tools. Since it uses a fixed-sized database, it applies retention specifications or downsamples older metric data according to your [configurations](http://graphite.readthedocs.org/en/latest/config-carbon.html#storage-schemas-conf). This typically means that you'll have fine resolution metric data immediately which gets more coarse over time.
 
-OpenTSDB is a distributed and scalable Time Series Database (TSDB) written on top of HBase. As such, running this systems introduces a bit more complexity, but what you gain is a very scalable database for storing metrics, and as a result no downsampling is needed. Just keep adding more nodes to your HBase cluster and scale it horizontally. You'll also benefit from a large community, and tools supporting HBase and Hadoop. A common complaint of OpenTSDB is its front-end and querying interface, especially when contrasted against Graphite's [built-in UI](http://graphite.wikidot.com/screen-shots) or the [many others](http://dashboarddude.com/blog/2013/01/23/dashboards-for-graphite/) out there.
+[OpenTSDB](http://opentsdb.net/) is a distributed and scalable Time Series Database (TSDB) written on top of HBase. As such, running this systems introduces a bit more complexity, but what you gain is a very scalable database for storing metrics, and as a result no downsampling is needed. Just keep adding more nodes to your HBase cluster and scale it horizontally. You'll also benefit from a large community, and tools supporting HBase and Hadoop. A common complaint of OpenTSDB is its front-end and querying interface, especially when contrasted against Graphite's [built-in UI](http://graphite.wikidot.com/screen-shots) or the [many others](http://dashboarddude.com/blog/2013/01/23/dashboards-for-graphite/) out there.
 
 Regardless of which tool you choose, having a system for storing and visualizing metrics should be one of your first goals for building a comprehensive monitoring solution that works for you.
 
 
 ## Collection
 
-Once you've set up a system for storing metrics, you need a way to push data into it. This data can be anything from CPU, memory, network, I/O, load, disk, or even business/application level metrics such as number of purchases.
+Once you've set up a system for storing metrics, you need a way to push data into it. This data can be anything from CPU, memory, network, I/O, load, disk, or even business/application level metrics such as number of purchases, signups, checkouts, etc.
 
 Systems for collecting and publishing metrics include StatsD, collectd and Diamond:
 
@@ -75,8 +75,14 @@ Keep in mind that this is an instantaneous view of your application metrics that
 
 Although Metrics is a Java only library, its underlying value is in defining a convention for defining metric data. These ideas are already starting to integrate into other languages like [Ruby](https://github.com/johnewart/ruby-metrics). Eventually as more languages adopt this method, and platforms begin to ingest the metric data, then a more comprehensive ecosystem can emerge.
 
+---
+
+Check out [Crash Course Into Open Source Monitoring - Part 3 (Centralized Logging)]({% post_url 2013-10-19-crash-course-into-open-source-monitoring-3 %}) for the next write-up in this series
+
+---
 
 ## Resources
 
 * Measure Anything, Measure Everything (from Etsy): <http://codeascraft.etsy.com/2011/02/15/measure-anything-measure-everything/>
 * Metrics: <http://metrics.codahale.com/>
+* Metrics Everywhere (presentation by Coda Hale): [PDF](http://codahale.com/codeconf-2011-04-09-metrics-metrics-everywhere.pdf) / [Video](http://www.youtube.com/watch?v=czes-oa0yik&noredirect=1)

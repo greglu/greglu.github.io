@@ -79,4 +79,8 @@ Having logs centrally located is a great practice to establish, and for many com
 
 > logstash is a tool for managing events and logs. You can use it to collect logs, parse them, and store them for later use (like, for searching). Speaking of searching, logstash comes with a web interface for searching and drilling into all of your logs.
 
+---
+
 Check out [Crash Course Into Open Source Monitoring - Part 4 (logstash)]({% post_url 2013-10-23-crash-course-into-open-source-monitoring-4 %}) for an in-depth write up about logstash.
+
+---

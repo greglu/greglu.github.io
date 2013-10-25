@@ -5,14 +5,14 @@ date:   2013-10-17 14:45:00
 categories: monitoring open-source
 ---
 
-This write-up is meant as a starting point into systems and application monitoring for developers and DevOps engineers alike. There's a wealth of tools and resources on the internet, but getting a big picture view of how everything fits together is harder to understand when you begin diving into this topic.
+This write-up is meant as a starting point into software monitoring for developers and DevOps engineers alike. There's a wealth of tools and resources on the internet, but getting a big picture view of how everything fits together is harder to understand when you start researching this topic.
 
 If you suddenly find yourself as a new DevOps engineer, or a developer needing to do operations work on your software, then hopefully this guide can serve as a starting point into the world of open source monitoring.
 
 
 # Open Source Tool List
 
-There are lots of open source tools out there for monitoring, and I'll begin by separating them into these loosely defined categories, then attempt to explain the underlying problems each category addresses. This list is in no way comprehensive, but represent tools which I have tried out myself. Keep in mind that many of these could be configured in such a way that would cause it to fall into another category.
+There are lots of tools out there for monitoring, and I'll begin by separating them into these loosely defined categories, then attempt to explain the underlying problems each category solves. This list is in no way comprehensive, but represent tools which I have tried out myself.
 
 ## Metrics
 * Graphite: <http://graphite.wikidot.com/>
