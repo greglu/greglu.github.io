@@ -44,22 +44,26 @@ Systems for collecting and publishing metrics include StatsD, collectd and Diamo
 
 In each of these diagrams, `graphite01` represents a single server hosting all of the processes that make up Graphite: whisper, carbon, and the front-end. A high level diagram can be found [here](http://graphite.wikidot.com/high-level-diagram). More complex deployments of Graphite are possible, but for the purposes of this document, they're collapsed into a single server.
 
-The two following setups aren't mutually exclusive. They can be combined to create a hybrid setup, where some metrics get reported through statsd (for example, custom application metrics), while diamond collects others (like system level metrics).
+### Basic Graphite setup
 
-### Basic setup
-
-![Basic setup](/images/crash_course_into_open_source_monitoring_tools/metrics-overview-01.png)
+![Basic Graphite setup](/images/crash_course_into_open_source_monitoring_tools/metrics-01.png)
 
 * Diamond, or collectd, are daemons (processes) run on the actual servers. Then at configured intervals (say every 30 seconds), they collect metrics and report to `graphite01`.
 * A default Diamond install will collect system metrics like CPU, RAM, IO, disk space, etc. For a complete list of built-in collectors, check out [this page](https://github.com/BrightcoveOS/Diamond/wiki/Collectors).
 
-### Statsd setup
+### StatsD setup
 
-![Statsd setup](/images/crash_course_into_open_source_monitoring_tools/metrics-overview-02.png)
+![Statsd setup](/images/crash_course_into_open_source_monitoring_tools/metrics-02.png)
 
 * Although `statsd[01-02]` are represented as their own servers in the diagram, they're actually just processes that can run anywhere.
 * You can run one statsd process or multiple, depending on your network topology, scaling needs, etc.
 * Statsd also supports different [backends](https://github.com/etsy/statsd/wiki/Backends).
+
+### Graphite and StatsD hybrid setup
+
+The previous two setups aren't mutually exclusive. They can be combined to create a hybrid setup, where some metrics get reported through statsd (for example, custom application metrics reported directly by the apps), while diamond collects others (like system level metrics).
+
+![Graphite and StatsD setup](/images/crash_course_into_open_source_monitoring_tools/metrics-03.png)
 
 ## Metrics (Java library from Coda Hale)
 

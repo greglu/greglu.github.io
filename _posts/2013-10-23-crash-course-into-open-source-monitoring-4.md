@@ -172,7 +172,7 @@ Logstash has a great tutorial titled [Pull metrics from logs](http://logstash.ne
 
 The tutorial explains how to configure logstash to process apache logs and emit counts of HTTP response codes to statsd using the [plugin](http://logstash.net/docs/1.2.2/outputs/statsd). Here's what the topology could look like:
 
-![Integration with Graphite and statsd](https://dl.dropbox.com/s/7hqn40h9up2cwad/logstash-05.png)
+![Integration with Graphite and statsd](/images/crash_course_into_open_source_monitoring_tools/logstash-05.png)
 
 Notice how `logstash01` outputs directly to both `statsd01` and `graphite01`. The tutorial outlines the reasons for outputting to statsd, so when would you want to output to graphite? Well it turns out there are a few reasons:
 
