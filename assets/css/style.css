@@ -28,8 +28,6 @@ table {
 	border-spacing: 0;
 }
 
-
-
 /*** Basics ***/
 body {
 	font-family: Verdana, serif;
@@ -57,7 +55,8 @@ sup { vertical-align: super; font-size: 0.85em; }
 sub { vertical-align: sub; font-size: 0.85em; }
 
 code {
-    font: 0.85em Monaco, Courier, Monospace;
+  font: 0.85em Monaco, Courier, Monospace;
+  background-color: #073642;
 }
 
 blockquote {
@@ -89,8 +88,6 @@ h3 {
 	margin: 0 0 10px 0;
 }
 
-
-
 /*** Useful Classes ***/
 .clear { clear: both; }
 .float-left { float: left; }
@@ -104,8 +101,6 @@ h3 {
 .img-middle { vertical-align: middle; }
 .nopadding { padding: 0; }
 .nounderline { text-decoration: underline; }
-
-
 
 /*** Structure ***/
 #page {
@@ -176,8 +171,6 @@ h3 {
   /*padding: 2px 4px;*/
 }
 
-
-
 /*** Posts ***/
 article {
 	margin-bottom: 40px;
@@ -220,8 +213,6 @@ img.center {
 	margin: 0 auto 1em auto;
 }
 
-
-
 /*** Pagination ***/
 .postnavigation {
 	padding-top: 10px;
@@ -236,8 +227,6 @@ img.center {
 .postnavigation .right {
 	float: right;
 }
-
-
 
 /*** Media Queries ***/
 @media all and (max-width: 870px) {
@@ -262,8 +251,6 @@ img.center {
 	}
 
 }
-
-
 
 /*** Icons ***/
 @font-face {
